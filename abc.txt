@@ -2,9 +2,12 @@ some text
 and some more
 
 git init
-git add nazwa.txt
+
+git remote add origin https://github.com/bart3k1/nazwarepozytorium
+
+git add <nazwaplikuwkatalogu>.txt
 git status
+git commmit -m "komentarz"
 git pull
 git push -u origin master
-git commmit -m "komentarz"
-git remote add origin https://github.com/bart3k1/nazwarepozytorium
+
