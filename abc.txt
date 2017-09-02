@@ -1,2 +1,10 @@
 some text
 and some more
+
+
+git add nazwa.txt
+git status
+git pull
+git push -u origin master
+git commmit -m "komentarz"
+git remote add origin https://github.com/bart3k1/nazwarepozytorium
