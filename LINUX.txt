@@ -1,0 +1,85 @@
+-----------------
+BASICS
+-----------------
+Ctrl Insert to copy 
+Shift Insert paste
+ctrl+c			/przerywanie	procesu	
+
+.			/current dir
+..			/parent dir
+
+clear			/ czysci terminal
+pwd 			/ aktualny katalog
+
+ls 			/ lista
+ls -l 			/ informacje o elementach
+ls -lh			/ info humanreadeable kilobyte
+ls -a			/ukryte pliki
+
+cd			/ zmiana directory
+cd ..			/ up
+cd ../..		/ up up
+cd /home/satq		/ sciezka bezposrednia	
+cd ~			/ user home directory
+
+cd a\ b			/ po \ mozna spacje
+cd "a b"		/ to samo - katalog ze spacja
+
+
+-----------------
+DIRECTORIES
+-----------------
+		
+mkdir nazwa		/tworzy katalog nazwa
+mkdir ~/D/t/z		/w katalogu home/satq i dalej .. /D/t tworzy kat z
+
+rmdir nazwa		/ kasuje dir nazwa / tylko pusty!
+rm -R nazwa		/ ksuje z zawartoscia /recursively
+
+mv nazwa nazwax		/ zmiana nazwy
+
+-----------------
+PLIKI
+-----------------
+nano 			/nowy plik 
+less nazwa.txt		/ o pliku wsyztsko "q" wychodzi
+
+head nazwa.txt		/pokazuje 10 linijek pliku
+tail nazwa.txt 		/ostatnie 10
+head -n 20 naz.tx	/20
+
+mv file.txt filex.txt	/zmiana nazwy pliku
+
+rm file.txt		/ kasuje plik
+
+mv fle.txt katalog	/przenosi do katalogu
+mv fle.txt ..		/ kopiuje wyzej
+
+cp fle.txt fle1.txt	/ kopia
+cp nowy.txt ~/Documents/test	/kopiujemy do katalogu
+
+find / test		/szuka plikow o nazwie test
+	
+
+
+
+
+
+
+
+-----------------
+KOLEJNE
+-----------------
+
+-----------------
+KOLEJNE
+-----------------
+
+-----------------
+KOLEJNE
+-----------------
+
+find: ‘test’: No such file or directory
+
+
+
