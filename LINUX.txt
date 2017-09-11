@@ -15,7 +15,9 @@ ls 			/ lista
 ls -l 			/ informacje o elementach
 ls -lh			/ info humanreadeable kilobyte
 ls -a			/ukryte pliki
+ls -R 			/struktura katalogow
 
+cd /katalog		/wchodzi do katalogu
 cd			/ zmiana directory
 cd ..			/ up
 cd ../..		/ up up
@@ -38,10 +40,18 @@ rm -R nazwa		/ ksuje z zawartoscia /recursively
 
 mv nazwa nazwax		/ zmiana nazwy
 
+
+
+
 -----------------
 PLIKI
 -----------------
+
+cat nazwa.txt		/wyswietla plik
+grep fraza plik		/szukafrazy w pliku
+
 nano 			/nowy plik 
+gedit plik.txt		/edycja pliku
 less nazwa.txt		/ o pliku wsyztsko "q" wychodzi
 
 head nazwa.txt		/pokazuje 10 linijek pliku
@@ -60,16 +70,16 @@ cp nowy.txt ~/Documents/test	/kopiujemy do katalogu
 
 find / test		/szuka plikow o nazwie test
 	
-
-
-
-
-
-
-
 -----------------
-KOLEJNE
+SU DO
 -----------------
+
+su 			/substitute user
+sudo passwd root	/ ustawienie hasla dla su
+sudo -i			/as root
+sudo 			/ jedna rzecz as root
+
+
 
 -----------------
 KOLEJNE
