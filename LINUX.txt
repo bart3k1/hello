@@ -1,6 +1,7 @@
 -----------------
 BASICS
 -----------------
+spd-say 'get back to work'	/ czyta tekst
 sensible-browser adres 	/przegladarka
 Ctrl Insert to copy 
 Shift Insert paste
@@ -47,6 +48,7 @@ mv nazwa nazwax		/ zmiana nazwy
 -----------------
 PLIKI
 -----------------
+./plik			/uruchamia plik
 locate plik		/wyswietla lokalizacje
 cat nazwa.txt		/wyswietla plik
 grep fraza plik		/szukafrazy w pliku
