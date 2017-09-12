@@ -1,6 +1,7 @@
 -----------------
 BASICS
 -----------------
+sensible-browser adres 	/przegladarka
 Ctrl Insert to copy 
 Shift Insert paste
 ctrl+c			/przerywanie	procesu	
@@ -46,7 +47,7 @@ mv nazwa nazwax		/ zmiana nazwy
 -----------------
 PLIKI
 -----------------
-
+locate plik		/wyswietla lokalizacje
 cat nazwa.txt		/wyswietla plik
 grep fraza plik		/szukafrazy w pliku
 
@@ -79,17 +80,40 @@ sudo passwd root	/ ustawienie hasla dla su
 sudo -i			/as root
 sudo 			/ jedna rzecz as root
 
+-----------------
+USERZY
+-----------------
+
+sudo useradd -d /home/testuser -m testuser
+sudo passwd testuser
+albo
+adduser username
+
+cat /etc/passwd		/wyswietla userow 
+awk -F':' '$2 ~ "\$" {print $1}' /etc/shadow	/wyswietla logujacych sie
+sudo deluser obsolete	/You delete a user (for instance obsolete) with
+sudo deluser --remove-home name	/delete his home dir/mails 
+sudo deluser --remove-all-files name / zupelnie
 
 
 -----------------
-KOLEJNE
+CRON
 -----------------
 
+crontab -e 
+*/1 * * * * echo "job every minute"
+
 -----------------
-KOLEJNE
+FIND KILL PROCES
 -----------------
 
-find: ‘test’: No such file or directory
+pidof nazwaprosesu 	/ wyszukuje numer procesu
+kill numerprocesu	/ zabija proces
+
+ps aux | grep -i firefox / wyszukuje + info
+
+
+
 
 
 
