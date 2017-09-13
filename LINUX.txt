@@ -1,6 +1,37 @@
+
+-----------------
+INFO O KOMPIE
+-----------------
+
+cat /proc/cpuinfo		/ cpu 
+cat /proc/version		/ cpu
+sudo lshw			/ wszystko o kompie
+uname -a			/ jądro systemu
+free -m,-g 				/info o pamieci mega/giga
+
+who 				/userzy
+
+-----------------
+SIEĆ
+-----------------
+
+ping [adres IP / adres WWW]
+
+
 -----------------
 BASICS
 -----------------
+calendar		/lista wydarzeń
+cal			/kalendarz
+
+
+
+komenda np. ls > plik.txt		/zapisac komende do pliku
+komenda np. ls >> plik.txt		/dopisac -- || ---
+
+apropos cochcesz	/ znajduje powiazane komendy
+man ls		/obadac ls (/search ?backwards &displayonlymatches)
+
 spd-say 'get back to work'	/ czyta tekst
 sensible-browser adres 	/przegladarka
 Ctrl Insert to copy 
@@ -19,16 +50,21 @@ ls -lh			/ info humanreadeable kilobyte
 ls -a			/ukryte pliki
 ls -R 			/struktura katalogow
 
+
 cd /katalog		/wchodzi do katalogu
 cd			/ zmiana directory
 cd ..			/ up
 cd ../..		/ up up
 cd /home/satq		/ sciezka bezposrednia	
-cd ~			/ user home directory
+cd ~/			/ user home directory
+cd ~/D +tabtab		/lista rzeczy w tym dir zaczynajacych sie na D
+ + literka + tab i dopisuje koniec :)!
+cd / 			/root dir
 
 cd a\ b			/ po \ mozna spacje
 cd "a b"		/ to samo - katalog ze spacja
 
+cd 111 ; ls > nowy.txt 	/ zmienia i zapisuje liste do pliku
 
 -----------------
 DIRECTORIES
@@ -41,6 +77,7 @@ rmdir nazwa		/ kasuje dir nazwa / tylko pusty!
 rm -R nazwa		/ ksuje z zawartoscia /recursively
 
 mv nazwa nazwax		/ zmiana nazwy
+mv nazwa katalog	/ zmiana miejsca
 
 
 
@@ -53,10 +90,15 @@ locate plik		/wyswietla lokalizacje
 cat nazwa.txt		/wyswietla plik
 grep fraza plik		/szukafrazy w pliku
 
+echo "cos" > plik.txt	/nowy plik
+echo "cos" >> plik.txt	/dopisuje do pliku
+
+touch plik.txt		/nowy plik
 nano 			/nowy plik 
 gedit plik.txt		/edycja pliku
 less nazwa.txt		/ o pliku wsyztsko "q" wychodzi
 
+wc plik.txt		/ilosc linii/slow/charow
 head nazwa.txt		/pokazuje 10 linijek pliku
 tail nazwa.txt 		/ostatnie 10
 head -n 20 naz.tx	/20
@@ -64,6 +106,7 @@ head -n 20 naz.tx	/20
 mv file.txt filex.txt	/zmiana nazwy pliku
 
 rm file.txt		/ kasuje plik
+unlink file.txt		/ kasuje
 
 mv fle.txt katalog	/przenosi do katalogu
 mv fle.txt ..		/ kopiuje wyzej
@@ -72,6 +115,8 @@ cp fle.txt fle1.txt	/ kopia
 cp nowy.txt ~/Documents/test	/kopiujemy do katalogu
 
 find / test		/szuka plikow o nazwie test
+
+cr -r katalog katalog	/recursive z katalogami
 	
 -----------------
 SU DO
@@ -109,10 +154,21 @@ crontab -e
 FIND KILL PROCES
 -----------------
 
+ps -el			/wszystkie procesy
+
 pidof nazwaprosesu 	/ wyszukuje numer procesu
 kill numerprocesu	/ zabija proces
+kill -9 numerprocesu	/ jakos tak bardziej zabija :D
 
 ps aux | grep -i firefox / wyszukuje + info
+
+-----------------
+IMAGES
+-----------------
+
+eog image.jpg
+convert -charcoal photo.jpg photoszkic.png
+
 
 
 
