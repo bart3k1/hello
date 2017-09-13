@@ -1,0 +1,59 @@
+-----------------
+REGEXY
+-----------------
+
+grep "x" states.txt
+
+egrep "i.g" states.txt
+.	/represents any character
+
+egrep "s+sa" states.txt
++	/represents one or more occurrences of the preceeding expression
+
+egrep "*as" states.txt
+*	/metacharacter which represents zero or more occurrences of the preceding expression
+
+egrep "s{2}" states.txt 
+{2}	/pecifies exactly two occurrences of the character
+{2,3}	/albo 3
+
+egrep "(iss){2}" states.txt 
+(abc){3} /trzykrotnie abc
+egrep "(i.{2}){3}" states.txt / szukamy (3 razy i po ktorym sa dwie dowolne) i+xx+i+yy+i+zz
+
+
+\w metacharacter corresponds to all “word”
+\W non words
+
+grep nie \d metacharacter corresponds to all “number” characters / mozna: [0-9]
+grep nie \D non digits
+
+\s metacharacter corresponds to all “space” characters
+\S non space
+
+
+egrep -v "\w" small.txt / odwrocenie wynikow
+egrep "[aeiou] small.txt	/ samogloski
+egrep "^[aeiou] small.txt 	/poza samogloskami
+[e-q] miedzy e a q
+[E-Q] medzy E a Q
+
+
+-----------------
+
+-----------------
+
+
+-----------------
+
+-----------------
+
+
+-----------------
+
+-----------------
+
+
+-----------------
+
+-----------------
