@@ -1,59 +1,129 @@
 -----------------
 REGEXY
 -----------------
-
 grep "x" states.txt
-
 egrep "i.g" states.txt
 .	/represents any character
-
 egrep "s+sa" states.txt
 +	/represents one or more occurrences of the preceeding expression
-
 egrep "*as" states.txt
 *	/metacharacter which represents zero or more occurrences of the preceding expression
-
 egrep "s{2}" states.txt 
 {2}	/pecifies exactly two occurrences of the character
 {2,3}	/albo 3
-
 egrep "(iss){2}" states.txt 
 (abc){3} /trzykrotnie abc
 egrep "(i.{2}){3}" states.txt / szukamy (3 razy i po ktorym sa dwie dowolne) i+xx+i+yy+i+zz
-
-
 \w metacharacter corresponds to all “word”
 \W non words
-
 grep nie \d metacharacter corresponds to all “number” characters / mozna: [0-9]
 grep nie \D non digits
-
 \s metacharacter corresponds to all “space” characters
 \S non space
-
-
 egrep -v "\w" small.txt / odwrocenie wynikow
 egrep "[aeiou] small.txt	/ samogloski
-egrep "^[aeiou] small.txt 	/poza samogloskami
+egrep "[^aeiou] small.txt 	/poza samogloskami
+egrep -v "[u]" states.txt 	/ bez u
 [e-q] miedzy e a q
 [E-Q] medzy E a Q
+egrep "\+" small.txt 		/szukanie plusa
+egrep "\." small.txt 		/szukanie kropki
+egrep "^t" small.txt 		/linie zaczynaja sie od t
+egrep "$r" small.txt 		/ lini konczy sie r
+egrep "r$|[0-9]" small.txt 	/konczy r albo cyferkowa
+egrep "a$|[0-9]" small.txt states.txt / w dwoch plikach
+egrep "^[AEIOU]{1}.+[aeiou]{1}$" states.txt / zaczyna i konczy na samogloske
+-----------------
+
+Metacharacter	Meaning
+.	Any Character
+\w	A Word
+\W	Not a Word
+\d	A Digit
+\D	Not a Digit
+\s	Whitespace
+\S	Not Whitespace
+[def]	A Set of Characters
+[^def]	Negation of Set
+[e-q]	A Range of Characters
+^	Beginning of String
+$	End of String
+\n	Newline
++	One or More of Previous
+*	Zero or More of Previous
+?	Zero or One of Previous
+|	Either the Previous or the Following
+{6}	Exactly 6 of Previous
+{4, 6}	Between 4 and 6 or Previous
+{4, }	More than 4 of Previous
+-v	odwrocenie szukania
 
 
 -----------------
-
+FIND
 -----------------
 
-
------------------
-
------------------
+find . -name "states.txt"
 
 
 -----------------
-
+BASH
 -----------------
 
+head -n 5 ~/.bash_history	/history bash 5 linii
+grep "states" ~/.bash_history	/states w history
+
+alias edbp='nano ~/.bash_profile'
+alias docs="cd ~/Documents"
+
+head -n 4 states.txt > four.txt	/ zapisz pierwsze 4 line do 
+head -n 6 states.txt > six.txt	/ 6
+
+diff 4.txt 6.txt	/porownanie
+sdiff 4.txt 6.txt	/porownanie w kolumnach
 
 -----------------
+hash/checksum
+-----------------
+
+cos nie robi
+md5 states.txt		/takie same hasze dla takich samych plikow
+md5 states1.txt		/ --\\--
+
+a to robi:
+shasum states.txt
+shasum states1.txt
+
+
+-----------------
+PIPES
+-----------------
+
+cat states.txt | head -n 5	
+/This output from cat canada.txt will go into our pipe, and we’ll attach the dispensing end of the pipe to head, which we use to look at the first few lines of a file:
+The general syntax of the pipe is 
+[program that produces output] | [program uses pipe output as input instead of a file].
+
+grep "[aeiou]$" states.txt | wc -l
+/“How many US states end in a vowel?” We could use grep and regular expressions to list all of the state names that end with a vowel, then we could use wc to count all of the matching state names:
+
+grep "New" states.txt | wc -l
+
+uniq ~/.bash_history
+/ unikalne komendy z historii
+
+sort ~/.bash_history | uniq -c | sort
+/sortuje, przesiewa i dodaje liczbe, sortuje po liczbie
+
+
+
+
+
+
+
+
+
+
+
 
 -----------------
