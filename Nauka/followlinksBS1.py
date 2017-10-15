@@ -9,6 +9,7 @@ response = http.request('GET', 'http://dziendobry.tvn.pl' + start)
 soup = BeautifulSoup(response.data, "lxml")
 
 tagi = {}
+kategorie = []
 tytuly = []
 leady = []
 linki = []
@@ -22,6 +23,9 @@ while counter < ile_art:
     for link in soup.find_all("h4",{'class': 'detail__title'} ):
         tytuly.append(link.text.strip())
 
+    for link in soup.find_all("div",{'class': 'detail__title-foot'} ):
+                kategorie.append(link.text.strip())
+
     for link in soup.find_all("div",{'class': 'detail__short'} ):
         leady.append(link.text.strip())
 
@@ -33,14 +37,15 @@ while counter < ile_art:
             linki.append(link.get('href'))
     counter += 1
 
-print(tagi)
-print(tytuly)
-print(leady)
-print(linki)
+print(kategorie)
+#print(tagi)
+#print(tytuly)
+#print(leady)
+#print(linki)
 
 #zapisuje poniższe do pliku:
-sys.stdout = open('ddtvn.txt','wt')
-for i in range(len(tytuly)):
-    print(tytuly[i], '\n'+leady[i], '\n'+'http://dziendobry.tvn.pl'+linki[i])
+#sys.stdout = open('ddtvn.txt','wt')
+#for i in range(len(tytuly)):
+#    print(tytuly[i], '\n'+leady[i], '\n'+'http://dziendobry.tvn.pl'+linki[i])
 
 

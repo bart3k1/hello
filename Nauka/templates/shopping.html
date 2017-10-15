@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+   {% for k,v in fon.items(): %}
+        <div>
+        {{ "imię : {} | numer : {}".format(k, v) }}
+        </div>
+   {% endfor %}
+
+         <form method="POST">
+
+            <label>
+				Wpisz nazwę:
+		    <input	type="text" name="name">
+            </label>
+
+            <label>
+				Wpisz numer:
+		    <input	type="text" name="number">
+            </label>
+
+            <label>
+                <input	type="submit" value="Wyślij"></input>
+            </label>
+        </form>

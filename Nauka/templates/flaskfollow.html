@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+   {% for i in range(liczexp) %}
+        <div>
+        <h3>{{ "{} - {}".format(i+1, tytuly[i]) }}</h3>
+        {{ kategorie[i] }}<br>
+        {{ leady[i] }}<br>
+        {{ 'http://dziendobry.tvn.pl' + linki[i]  }}<br>
+        <a href="{{ 'http://dziendobry.tvn.pl' + linki[i]  }}"> Link >>> </a>
+        </div>
+    {% endfor %}
+
+
