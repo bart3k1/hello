@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+    <h2>Wylosowane słowa:</h2>
+   {% for i in liczexp %}
+        <div>
+        {{ "{}".format(slowa[i]) }}
+        <a href="{{ 'http://www.edupedia.pl' + linki[i]  }}"> Link >>> </a>
+        </div>
+    {% endfor %}
+
+
+
