@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Practical Flask</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for("static", filename="bootstrap.min.css") }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for("static", filename="favicon.ico") }}">
+</head>
+
+<header>
+
+ <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+            <img style="max-width:120px; margin-top: -7" src="{{ url_for("static", filename="images/logo.png") }}">
+
+        </a>
+</div>
+
+<div class="conteiner-fluid">
+
+        <a href="/dashboard">
+            <button type="button" class="btn btn-primary" aria-label="Left Align" style="margin-top: 5px; margin-botto,: 5px; height: 44px; margin-right: 15px" >
+            Dashboard
+        </button>
+        </a>
+
+
+
+    <ul class="nav navbar-nav navbar-right" style="margin-top: 5px; margin-botto,: 5px; height: 44px; margin-right: 15px">
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Cośtam</a></li>
+    </ul>
+
+</div>
+</header>
+
+<body>
+
+
+</body>
+
+</html>
