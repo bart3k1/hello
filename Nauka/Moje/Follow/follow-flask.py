@@ -50,7 +50,7 @@ def index():
                     linki.append(link.get('href'))
             counter += 1
 
-        return render_template("flaskfollow.html", tytuly=tytuly, kategorie=kategorie, leady=leady, linki=linki, liczexp=liczexp)
+        return render_template("pizza.html", tytuly=tytuly, kategorie=kategorie, leady=leady, linki=linki, liczexp=liczexp)
 
 
 

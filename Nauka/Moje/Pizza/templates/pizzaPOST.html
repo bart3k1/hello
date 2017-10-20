@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+    <h1>Wybierz składnik w pizzy: </h1>
+    <form method="POST">
+
+    <select name="wybrany_skladnik">
+    {% for skladnik in skla_sort %}
+    <option value= "{{skladnik}}" SELECTED>{{skladnik}}</option>
+    {% endfor %}
+    </select>
+
+    <label>
+    <input	type="submit" value="Wyślij"></input>
+    </label>
+
+    </form>
+
+</html>
