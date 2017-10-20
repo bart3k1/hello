@@ -1,9 +1,9 @@
-from pizza import pizza
-from pizza import skladniki
+from _pizza import pizza
+from _pizza import skladniki
 
 for i in sorted(skladniki):
     print(i)
-x = "anchovies" #input("Wpisz składnik: ")
+x = input("Wpisz składnik: ")
 
 for k,v in pizza.items():
     if x in v:

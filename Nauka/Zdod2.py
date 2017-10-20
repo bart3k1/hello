@@ -17,6 +17,6 @@ def ile_cyfr(x):
             if x in lista[i][j]:
                 return((lista[i][0]) * (lista[i][j].index(x)+1))
 
-for i in " .adgjmptw":
+for i in input("Wpisz: "):
     print("".join(ile_cyfr(i)), end ="")
 
