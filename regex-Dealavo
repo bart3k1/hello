@@ -1,0 +1,8 @@
+import re
+
+regex = r"(?<![wd])(sztukw?)(?![wd])"
+string = """(bedzie matchowalo slowa): sztuka, sztuki, sztuk, ale nie bedzie matchowalo slow: sztukateria, sztukmistrz, sztuczka"""
+matches = re.findall(regex, string)
+
+for match in matches:
+    print(match)
