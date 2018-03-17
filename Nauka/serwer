@@ -1,0 +1,16 @@
+instalacja django
+http://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html
+
+
+ssh satq@195.242.116.224
+
+moze i tak:
+ssh satq@192.168.1.101 "python3 ./test.py"
+
+wersja pythona
+(which python3) | xargs -I % sh -c 'echo -n "%: "; % -V'
+
+who - kto jest
+
+python3 test.py 
+

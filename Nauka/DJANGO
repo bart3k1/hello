@@ -1,0 +1,144 @@
+VENV
+1) source venv3/bin/activate
+MYSQL BAZA
+2) mysql -h "127.0.0.1" -u "root" -p 
+3) mysql> CREATE DATABASE cms CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+DJANGO PROJEKT
+4) django-admin startproject cms
+5) python3 manage.py migrate
+	./manage.py makemigrations	
+	./manage.py showmigrations
+	./manage.py migrate exercises 0008
+
+6) python3 manage.py startapp NAZWA_APPKI_WEWNATRZ
+	
+	
+
+7) settings 	-> dodać apkę
+		-> ustawić dobrą bazę
+
+		TEMPLATES = [
+    			{
+	        	'BACKEND': 'django.template.backends.django.DjangoTemplates',
+	        	'DIRS': ['templates'],
+
+SHELL
+python3 manage.py shell
+->	from cmsbody.models import User
+->	User.objects.all()
+->	User.objects.get(id=1)
+
+User.objects.create(name="Bartłomiej", surname="Węgrzyn", role="web editor", phone="501602273")
+a = User.objects.get(id=1)
+a.role = "Web-Editor"
+a.save()
+
+MANY TO ONE -> zakladamy w MANY
+class Document(models.Model):
+	program = models.ForeignKey(Program, null=True, on_delete=models.CASCADE, 							related_name='program_documents')
+
+program1 = Program.objects.create(data=xxx,... )
+document1 = Document.objects.create(tytul=xxx,...)
+document1.program = program1
+document1.save()
+
+MANY TO MANY -> w dowolnym
+class Document(models.Model):
+	guest = models.ManyToManyField(Guest)
+
+document1 = Document.objects.get(id=1)
+guest1 = Guest.objects.create(name="XXX", ...)
+guest2 = Guest.objects.create(name="XXX", ...)
+document1.guest.add(guest1, guest2)
+document1.save()
+albo ...
+tops = [t1, t2]
+p.toppings.set(tops)
+p.toppings.remove(t1)
+p.toppings.clear()
+
+THROUGH / dodatkowe info w laczeniu
+class Topping(models.Model):
+	name = models.CharField(max_length=32)
+	price = models.FloatField()
+class Pizza(models.Model):
+	toppings = models.ManyToManyField(Topping, through=PizzaTopps)
+class PizzaTops(models.Model):
+	TOP_AMOUNT = (('h', 'half'),
+			('n', 'normal'),
+			('d', 'double'),
+			('t', 'triple'))
+	pizza = models.ForeignKey(Pizza)
+	topping	= models.ForeignKey(Topping)
+	amount = models.CharField(max_length=1, choices=TOP_AMOUNT, default='n')
+p = Pizza.objects.create(...)
+t = Topping.objects.create(...)
+pt = PizzaTopps.objects.create(pizza=p, topping=t, amount='n')
+
+_SET / wszystkie pizze z tym dodatkiem
+t = Topping.objects.get(pk=1)
+t.pizza_set.all()
+
+FILTRY
+https://docs.djangoproject.com/en/1.10/topics/db/queries/#retrieving-specific-objects-with-filters
+Topping.objects.filter(price__lt=5)
+Topping.objects.filter(price__lte=5)
+Topping.objects.filter(price__gt=5)
+Topping.objects.filter(price__gte=5)
+Topping.objects.filter(name__contains="onion")
+Toppings.objects.filter(name__in=['onion',	'anchovis',	'tomatoes'])
+
+Entry.objects.order_by('headline')
+Entry.objects.get(headline__exact="Cat bites dog")
+q.exclude(body_text__icontains="food") #i - nie musza byc casesensitive  istartswith and iendswith.
+Blog.objects.filter(entry__authors__name__isnull=True)
+
+
+KASOWANIE
+t = Topping.objects.get(name="anchovies")
+t.delete()
+
+
+
+FORMULARZE
+request.POST.get() 
+<label>
+<select	name="gender">
+<option	value="">Select...</option>
+<option	value="M">Male</option>
+<option	value="F">Female</option>
+</select>
+</label>
+
+request.POST.getlist().
+<label>
+<select	multiple name="colors">
+<option	value="">Select...</option>
+<option	value="red">Czerwony</option>
+<option	value="blue">Niebieski</option>
+</select>
+</label>
+
+CHECKBOX
+<label>
+Wybierz	dodatki:
+<input type="checkbox" name="topings" value="cheese">Dodatkowy ser
+<input type="checkbox" name="topings" value="ham">Dodatkowa szynka
+<input type="checkbox" name="topings" value="pineaple">Ananas
+</label>
+
+
+CAR_COLORS = (
+    (1, "red"),
+    (2, "blue"),
+    (3, "white"),
+    (4, "black")
+)
+class Car(models.Model):
+    color = models.IntegerField(choices = CAR_COLORS)
+c = Car.objects.get(pk=1)
+print(c.get_color_display())
+w htmlu {{ c.get_color_display }}
+
+

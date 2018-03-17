@@ -1,0 +1,30 @@
+Typy danych:
+boolean
+integer, float, long
+string, list, tuple, set, dict
+
+Wzorce:
+Singleton – kreacyjny wzorzec projektowy, którego celem jest ograniczenie możliwości tworzenia obiektów danej klasy do jednej instancji oraz zapewnienie globalnego dostępu do stworzonego obiektu. 
+
+Model-View-Controller (pol. Model-Widok-Kontroler) – wzorzec architektoniczny służący do organizowania struktury aplikacji posiadających graficzne interfejsy użytkownika[1]. 
+Zakłada podział aplikacji na trzy główne części[3][4]:
+Model – jest pewną reprezentacją problemu bądź logiki aplikacji.
+Widok – opisuje, jak wyświetlić pewną część modelu w ramach interfejsu użytkownika.
+Kontroler – przyjmuje dane wejściowe od użytkownika i reaguje na jego poczynania, zarządzając aktualizacje modelu oraz odświeżenie widoków.
+
+
+DJANGO
+ORM Object Relational Mapping - "mapowanie obiektowo-relacyjne" (od 
+technika pozwalajaca na konwertowanie i przekazywanie danych miedzy baza a aplikacja przy uzyciu programowania obiektowego pozwalający na łatwe i bezpieczne operacje na bazach danych
+
+STATIC METHOD is a method that knows nothing about the class or instance it was called on. It just gets the arguments that were passed, no implicit first argument. It is basically useless in Python -- you can just use a module function instead of a staticmethod.
+
+CLASS METHOD, on the other hand, is a method that gets passed the class it was called on, or the class of the instance it was called on, as first argument. This is useful when you want the method to be a factory for the class
+
+
+RÓZNICE PYTHON 2 -3
+-Print: In Python 2, “print” is treated as a statement rather than a function.
+-Integer Division: Python 2 treats numbers that you type without any digits after the decimal point as integers | Python 3 evaluates 3 / 2 as 1.5 by default, which is more intuitive for new programmers.
+-List Comprehension Loop Variables: zmieniala sie globalna dana This irritating bug has been fixed in Python 
+- Unicode Strings: Python 3 stores strings as Unicode by default
+Raising Exceptions: Python 3 requires different syntax for raising exceptions. raise IOError(“your error message”)

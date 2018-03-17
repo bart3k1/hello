@@ -1,0 +1,210 @@
+Debugowanie - 111 strona
+console.log(typeof zmienna); 	- > typ
+parseInt("24", 10)		-> zmiana na inta
+Math.pow(4, 3);			-> power 3
+
+var currentTime = new Date();
+var year = currentTime.getFullYear();
+
+var najmlodsza = tablica.sort().pop();
+var najstarsza = tablica.sort().shift();
+
+&& AND (logiczne i) 
+|| OR (logiczne lub)
+!(liczba3 > 22) - > NOT
+(liczba3 > 22) ^ (liczba3 != 23) - > XOR jeden albo drugi nie dwa i nie zaden
+
+// OBIEKTY
+var teacher = {
+		name: "Janusz",
+		surname: "Kowalski",
+		subject: "Programowanie JS",
+		teach: function(){
+				return	"Uczę	programowania";
+				},
+		aboutMe: function(){
+				console.log(this.name);
+				console.log(this.surname);
+				console.log(this.subject);
+				},
+};
+var Car = function(type, hp, color) {
+		this.type = type;
+		this.hp	= hp;
+		this.color = color;
+};
+var bmw = new Car("bmw", 125, "blue");
+console.log(bmw.type);
+console.log(bmw.hp);
+console.log(bmw.color);
+/PROTOTYPY
+Car.prototype.drive = function(km){
+	console.log(this.carColor + " " + this.carType + " drives for " + km + "km");
+	this.km += km;
+}
+
+
+// funkcja anonimowa
+var bar = function() {
+			console.log("Ala");
+			}	
+bar();
+
+//IF
+if (warunek) {}	else if (warunek2) {} else {}
+//SWITCH
+var expression = 3;
+switch (expression) {
+			case 1: console.log("Today is Mon.");
+			break;
+			case 2: console.log("Today is Tue.");
+			break;
+			default: console.log("Wrong day number");
+//WHILE			}
+var i = 0;
+while (i != 5) {
+		console.log("Pętle są fajne");
+		i = Math.floor(Math.random() * 10);
+		}
+//DO WHILE
+var i = 0;
+do {
+	console.log("Pętle są fajne");
+	i = Math.floor(Math.random() * 10);
+    }
+while (i != 5);
+// FOR z breakiem
+for (var i = 0;	i < 3; i++) {
+			var result = Math.floor(Math.random() * 10);
+			if (result === 5) { 
+					break;
+					}
+				}
+
+// PODWOJNA PETLA Z MYKIEM
+function testy(tablica){
+    var wyniki = [];
+    for (var i = 0; i < tablica.length; i++){
+        wyniki.push(myk(tablica[i]))
+    }
+    return wyniki;
+}
+
+
+function myk(t2){
+    for (var x = 0; x < t2.length; x++){
+        if (t2[x]%2 != 0){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+}
+// BEZ MYKA
+
+function testy1(tablica){
+    var wyniki = [];
+    for (var i = 0; i < tablica.length; i++){
+        var ustaw = true;
+        for (var x = 0; x < tablica[i].length; x++){
+            console.log(tablica[i][x]);
+            console.log(tablica[i][x]%2);
+            if (tablica[i][x]%2 === 0 ){
+                ustaw = true;
+            }
+            else {
+                ustaw = false;
+                break;
+            }
+        console.log(ustaw)
+        }
+        console.log("ustaw 2 " + ustaw);
+        wyniki.push(ustaw)
+    }
+
+    return wyniki
+}
+
+// TABLICA 2D po kolei 
+
+function testy(a,b) {
+    var rzedy = [];
+    var licznik = 0;
+
+    for (var i = 0; i < a; i++){
+        rzedy.push([]);
+            for (var x = 0; x < b; x++){
+            rzedy[i].push(licznik);
+            licznik++
+            }
+
+        }
+    console.log(rzedy);
+}
+
+// CZASOWO !!
+var id = setInterval(function() {
+    console.log('jestem wywoływana co dwie sekundy');
+}, 2000
+);
+clearInterval(id)
+
+
+function boilEgg(time){
+    var id = setInterval(function() {
+    console.log('Gotuje się');
+}, 2000
+);
+    var	timeout	=	setTimeout(function	()	{
+		clearInterval(id);
+        console.log('Ugotowane!');
+    },	time);
+}
+console.log(boilEgg(10000));
+
+// SORT
+//Tworzymy funkcje
+function sortArray() {
+
+    //tworzymy zmienna points
+    var points = [41, 3, 6, 1, 114, 54, 64];
+
+    //aplikujemy sortowanie
+    points.sort(function(a, b) {
+        //sortowanie od najmniejszej do najwiekszej po cyfrach
+        return a-b;
+    });
+
+    //zwracamy posortowane
+    return points;
+}
+
+//i printujemy wynik
+console.log(sortArray());
+
+// ZMIANA W STRING UPPER LOWER UPPER
+String.prototype.upperLower = function() {
+    var napis = this;
+    // console.log(napis)
+    var czyDuza = false;
+    var wynik = "";
+    for(var i = 0; i < napis.length; i++){
+        if (napis[i] !== " ") {
+            if (czyDuza) {
+                wynik += napis[i].toUpperCase();
+                czyDuza = false;
+            }
+            else {
+                wynik += napis[i].toLowerCase();
+                czyDuza = true;
+            }
+        }else {
+                wynik += " ";
+        }
+    }
+    return wynik;
+};
+
+var tekst = "aa  JakiST ekstaa aC   ggg";
+console.log(tekst.upperLower());
