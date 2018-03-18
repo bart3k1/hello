@@ -1,0 +1,57 @@
+pip install django-extensions
+python3 manage.py shell_plus
+
+manage.py - samo podpowiada komendy
+
+python manage.py createsuperuser
+
+python manage.py changepassword darthvader
+
+dane z django_session odkodzic
+import base64
+base64.b64decode(dana)
+
+delete from django_session;
+
+
+'edu.my_context_processor.my_cp'  - dodanie zmiennej do wszystkich views
+
+{% for item in navigation %}
+        <li><a href="{{ item.href }}">
+            {{ item.caption }}</a></li>
+      {% empty %} - jak lista pusta!!!! 
+          lista pusta
+      {% endfor %}
+
+filtry
+<h2> {{ v|add:5 }}</h2>
+
+
+---inna metoda db connect
+sudo apt-get install python-mysqldb
+sudo apt-get install --upgrade python-mysqldb
+pip install mysql-connector-python --allow-external mysql-connector-python
+
+Faker - generowal imiiona nazwiska
+
+
+ on_delete=models.CASCADE
+
+ps aux | grep manage.py
+kill <numerek>
+kill -9 <numerek>
+xkill 
+alt+f7 - przesuwanie
+ctrl alt f1 - konsola - f7 grafika
+
+
+collect static - na serwerze
+
+200 - ok
+302 - przekierowanie
+
+
+q = forms.CharField(label='search', 
+                    widget=forms.TextInput(attrs={'placeholder': 'Search'}))
+
+
