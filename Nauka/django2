@@ -2,6 +2,7 @@ pip install django-extensions
 python3 manage.py shell_plus
 
 manage.py - samo podpowiada komendy
+manage.py clearsessions - czysci sesja
 
 python manage.py createsuperuser
 
