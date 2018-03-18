@@ -1,5 +1,33 @@
+user.user_permissions.all()
+permission = Permission.objects.get(jakis=jakis)
+user.user_permissions.add(permisiion)
+user.save()
+user.is_superuser = True/False
+
+
+select * from django_content_type;
+ select * from auth_permission;
+
+GRUPY:
+calym grupom nadajemy uprawnienia
+Group.objects.all()
+ Group.objects.all()
+<QuerySet [<Group: VIP>]>
+>>> group.save()
+>>> group
+<Group: VIP>
+>>> group.permissions.add()
+>>> group
+<Group: VIP>
+>>> group.permissions
+
+
+
 pip install django-extensions
 python3 manage.py shell_plus
+
+haslo w shellu:
+user.set_password('haslo')
 
 manage.py - samo podpowiada komendy
 manage.py clearsessions - czysci sesja
