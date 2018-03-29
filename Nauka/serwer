@@ -11,6 +11,7 @@ wersja pythona
 (which python3) | xargs -I % sh -c 'echo -n "%: "; % -V'
 
 who - kto jest
+write user
 
 python3 test.py 
 
